@@ -1,29 +1,32 @@
 
 # ==========================================
-# APPKATA NODE-RED - GITIGNORE
+# APPKATA - GITIGNORE
 # ==========================================
 
-# 1. Variables de entorno y secretos
+# 1. VARIABLES DE ENTORNO Y SECRETOS
 .env
 .env.*
 !.env.example
 !.env.template
+!.env.sample
+
 *.pem
 *.key
 *.p12
 *.pfx
+*.secret
 secrets/
 credentials/
 certs/private/
 
-# 2. Node.js / Node-RED
+# 2. NODE.JS / NODE-RED
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 *.log
 
-# Node-RED runtime data
+# Node-RED credentials and sensitive runtime data
 flows_cred.json
 *_cred.json
 .config.runtime.json
@@ -31,18 +34,31 @@ flows_cred.json
 context/
 .cache/
 
-# 3. Archivos temporales
+# 3. DATOS DE NODE-RED
+# Conservar los flujos y configuraciones versionables
+# No excluir data/ completo: puede contener flows.json
+data/flows_cred.json
+data/*_cred.json
+data/.config.runtime.json
+data/context/
+data/.context/
+data/.cache/
+data/node_modules/
+
+# 4. ARCHIVOS TEMPORALES
 tmp/
 temp/
 *.tmp
 *.bak
 *.swp
 *.swo
+*~
+
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# 4. Python / FastAPI
+# 5. PYTHON / FASTAPI
 __pycache__/
 *.py[cod]
 *$py.class
@@ -56,51 +72,54 @@ venv/
 ENV/
 env/
 
-# 5. Entornos y configuraciones locales
+# 6. EDITORES Y CONFIGURACIONES LOCALES
 .vscode/
 .idea/
 *.code-workspace
 .local/
 
-# 6. Docker
+# 7. DOCKER
 *.pid
 docker-data/
 docker-volumes/
 .docker/
 
-# 7. Bases de datos locales
+# 8. BASES DE DATOS LOCALES
 *.sqlite
 *.sqlite3
 *.db
 data/private/
 storage/private/
 
-# 8. Certificados y seguridad industrial
+# 9. CERTIFICADOS Y SEGURIDAD
 private/
 certificates/private/
 *.csr
-*.p12
-*.pfx
 
-# 9. Build y distribución
+# 10. BUILD Y DISTRIBUCIÓN
 dist/
 build/
 out/
 coverage/
 
-# 10. Sistema operativo
+# 11. SISTEMA OPERATIVO
 $RECYCLE.BIN/
 System Volume Information/
 
+# 12. RENDER / FLY.IO
+.render/
+.fly/
+
 # ==========================================
-# CONSERVAR:
-# flows/*.json
-# settings.js
+# ARCHIVOS QUE DEBEN CONSERVARSE
+# ==========================================
 # package.json
 # package-lock.json
+# settings.js
+# flows.json
+# flows/*.json
 # Dockerfile
 # docker-compose.yml
 # fly.toml
 # .env.example
 # README.md
-# ==========================================
