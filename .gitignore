@@ -1,0 +1,106 @@
+
+# ==========================================
+# APPKATA NODE-RED - GITIGNORE
+# ==========================================
+
+# 1. Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+certs/private/
+
+# 2. Node.js / Node-RED
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# Node-RED runtime data
+flows_cred.json
+*_cred.json
+.config.runtime.json
+.context/
+context/
+.cache/
+
+# 3. Archivos temporales
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 4. Python / FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+env/
+
+# 5. Entornos y configuraciones locales
+.vscode/
+.idea/
+*.code-workspace
+.local/
+
+# 6. Docker
+*.pid
+docker-data/
+docker-volumes/
+.docker/
+
+# 7. Bases de datos locales
+*.sqlite
+*.sqlite3
+*.db
+data/private/
+storage/private/
+
+# 8. Certificados y seguridad industrial
+private/
+certificates/private/
+*.csr
+*.p12
+*.pfx
+
+# 9. Build y distribución
+dist/
+build/
+out/
+coverage/
+
+# 10. Sistema operativo
+$RECYCLE.BIN/
+System Volume Information/
+
+# ==========================================
+# CONSERVAR:
+# flows/*.json
+# settings.js
+# package.json
+# package-lock.json
+# Dockerfile
+# docker-compose.yml
+# fly.toml
+# .env.example
+# README.md
+# ==========================================
